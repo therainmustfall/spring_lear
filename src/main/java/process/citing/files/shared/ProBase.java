@@ -18,7 +18,7 @@ public abstract class ProBase {
 	protected HttpServletResponse resp;
 	private   Method              methodDefault = null;
 	protected Logger logger;
-	
+	public ProBase() {}
 	public ProBase(HttpServlet srvlet, HttpServletRequest rqt, HttpServletResponse rsp)
 	{
 		this.servlet = srvlet;

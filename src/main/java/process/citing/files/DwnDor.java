@@ -1,5 +1,7 @@
 package process.citing.files;
 
+import org.springframework.stereotype.Component;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
+@Component
 @WebServlet(urlPatterns = {"/download"})
 public class DwnDor extends HttpServlet {
 	@Override

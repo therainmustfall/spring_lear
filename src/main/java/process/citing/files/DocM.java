@@ -21,7 +21,9 @@ import org.docx4j.wml.Tbl;
 import org.docx4j.wml.Tc;
 import org.docx4j.wml.Text;
 import org.docx4j.wml.Tr;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DocM {
 
 	public static void main(String[] args) {

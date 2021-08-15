@@ -21,9 +21,11 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 
+import org.springframework.stereotype.Component;
 import process.citing.files.shared.ButtonMethod;
 import process.citing.files.shared.ProBase;
 
+@Component
 public class RepProHub extends ProBase {
 	
     @Override
@@ -47,7 +49,7 @@ public class RepProHub extends ProBase {
     private   File                auplist;
     private   File                report_path;
     private   File                jiFile;
-
+	public RepProHub() {}
 	public RepProHub(HttpServlet srvlet, HttpServletRequest req, HttpServletResponse resp) {
     	super(srvlet, req, resp);
     	this.reportType = new HashMap<>();

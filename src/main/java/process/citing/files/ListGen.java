@@ -15,13 +15,16 @@ import org.docx4j.wml.ContentAccessor;
 import org.docx4j.wml.P;
 import org.docx4j.wml.Tc;
 import org.docx4j.wml.Text;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ListGen {
 	
 	String word_file_folder;
 	PnRc report_data;
 	WordprocessingMLPackage template;
-	
+
+	public ListGen() {}
 	public ListGen(PnRc pnrc, String wff) throws FileNotFoundException, Docx4JException{
 		this.word_file_folder = wff;
 		this.report_data = pnrc;

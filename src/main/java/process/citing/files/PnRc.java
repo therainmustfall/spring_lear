@@ -12,7 +12,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.collections4.ListUtils;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PnRc {
 	
 	File   PAPER_LIST_FILE;
@@ -29,7 +31,19 @@ public class PnRc {
 	int citation_counter;
 	int self_citation_counter;
 	int fles_citation_counter;
-	
+
+	public PnRc() {
+		this.paper_list = new ArrayList<>();
+		this.citing_files_list = new HashMap<>();
+		this.pure_citation_list =  new HashMap<>();
+		this.erup_citation_list = new HashMap<>();
+		this.jifMap = new HashMap<>();
+
+		this.cited_papers = 0;
+		this.citation_counter = 0;
+		this.self_citation_counter = 0;
+		this.fles_citation_counter = 0;
+	}
 	public PnRc(String jif, File paper_list_file, String citing_folder) {
 		// TODO Auto-generated constructor stub
 		this.JIF_FILE = jif;
