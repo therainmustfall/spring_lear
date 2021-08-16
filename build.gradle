@@ -8,10 +8,7 @@ plugins {
 group = 'process.citing.files'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-java.sourceCompatibility = JavaVersion.VERSION_1_8
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-}
+
 repositories {
 	mavenCentral()
 }
