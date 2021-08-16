@@ -1,6 +1,8 @@
 package process.citing.files;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 
@@ -14,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 @WebServlet(urlPatterns = {"/"})
 public class RepPro extends HttpServlet {
-	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
