@@ -9,6 +9,4 @@ public class GreetSimpleController
     public String index() {
         return "hello world";
     }
-
-
 }
