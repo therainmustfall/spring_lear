@@ -25,7 +25,6 @@ import org.springframework.stereotype.Component;
 import process.citing.files.shared.ButtonMethod;
 import process.citing.files.shared.ProBase;
 
-@Component
 public class RepProHub extends ProBase {
 	
     @Override

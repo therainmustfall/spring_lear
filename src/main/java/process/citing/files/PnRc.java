@@ -14,7 +14,6 @@ import java.util.Map;
 import org.apache.commons.collections4.ListUtils;
 import org.springframework.stereotype.Component;
 
-@Component
 public class PnRc {
 	
 	File   PAPER_LIST_FILE;

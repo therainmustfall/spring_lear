@@ -17,7 +17,6 @@ import org.docx4j.wml.Tc;
 import org.docx4j.wml.Text;
 import org.springframework.stereotype.Component;
 
-@Component
 public class ListGen {
 	
 	String word_file_folder;

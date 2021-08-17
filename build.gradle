@@ -23,7 +23,9 @@ dependencies {
 	implementation 'commons-logging:commons-logging:1.2'
 	implementation 'com.github.virtuald:curvesapi:1.04'
 	implementation 'org.docx4j:docx4j:3.3.4'
-	implementation 'org.dom4j:dom4j:2.0.0-RC1'
+	implementation ('org.dom4j:dom4j:2.0.0-RC1') {
+		exclude group: 'pull-parser', module: 'pull-parser'
+	}
 	implementation 'com.google.code.gson:gson:2.8.0'
 	implementation 'com.google.guava:guava:19.0'
 	implementation 'com.sun.activation:javax.activation:1.2.0'
@@ -51,6 +53,12 @@ dependencies {
 	testImplementation 'junit:junit:4.12'
 	implementation 'javax.servlet:javax.servlet-api:4.0.1'
 
+	// https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jsp-api
+	implementation 'org.apache.tomcat:tomcat-jsp-api:10.1.0-M4'
+// https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-jasper
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.0-M4'
+// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-tomcat
+	implementation 'org.springframework.boot:spring-boot-starter-tomcat:2.5.3'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
