@@ -1,8 +1,4 @@
-package process.citing.files;
-
-import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+package mis.files;
 
 import java.io.IOException;
 
@@ -13,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet(urlPatterns = {"/wos","/upload"}, loadOnStartup = 1)
-public class RepPro extends HttpServlet {
+@WebServlet(urlPatterns = {"/upload"})
+public class FileManager extends HttpServlet {
+	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RepProHub rph = new RepProHub(this, req, resp);
+		TitleSearch rph = new TitleSearch(this, req, resp);
 		rph.doPost();
 	}	
 
@@ -28,3 +25,4 @@ public class RepPro extends HttpServlet {
 		doPost(req, resp);
 	}
 }
+

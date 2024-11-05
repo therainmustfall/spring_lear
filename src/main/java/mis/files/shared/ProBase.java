@@ -1,4 +1,4 @@
-package process.citing.files.shared;
+package mis.files.shared;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -8,8 +8,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.log4j.Logger;
-import org.apache.log4j.Level;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 
 public abstract class ProBase {
 	
@@ -18,7 +20,7 @@ public abstract class ProBase {
 	protected HttpServletResponse resp;
 	private   Method              methodDefault = null;
 	protected Logger logger;
-	public ProBase() {}
+	
 	public ProBase(HttpServlet srvlet, HttpServletRequest rqt, HttpServletResponse rsp)
 	{
 		this.servlet = srvlet;
@@ -34,26 +36,17 @@ public abstract class ProBase {
 		
 		Level logLevel = Level.DEBUG;
 		String strLevel = servlet.getInitParameter("logLevel");
-		if(strLevel != null) logLevel = Level.toLevel(strLevel);
-		
-		logger = Logger.getLogger(logName);
-		logger.setLevel(logLevel);
+		if(strLevel != null){
+			logLevel = Level.toLevel(strLevel);
+		}
+		logger = LogManager.getLogger(logName);
+		logger.atLevel(logLevel);
+		// logger = Logger.getLogger(logName);
+		// logger.setLevel(logLevel);
 	}
 	
-	protected enum SessionData {
-        READ,
-        IGNORE
-    	}
+	protected enum SessionData { READ,IGNORE }
 
-    public void addHubToSession(String name,SessionData state) {
-        if (SessionData.READ == state) {
-		Object sessionObj = req.getSession().getAttribute(name);
-        	if (sessionObj != null) copyFromSession(sessionObj);
-	}
-        req.getSession().setAttribute(name, this);
-    }
-    
-    protected abstract void  copyFromSession(Object seessionObj);
     
     protected String executeButtonMethod() throws IOException, ServletException
     {
@@ -62,7 +55,7 @@ public abstract class ProBase {
     	methodDefault = null;
     	Class<?> clazz = this.getClass();
     	Class<?> enclosingClass = clazz.getEnclosingClass();
-    	if (enclosingClass != null)
+    	while (enclosingClass != null)
     	{
     		clazz = this.getClass();
     		enclosingClass = clazz.getEnclosingClass();

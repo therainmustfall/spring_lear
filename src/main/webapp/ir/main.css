@@ -1,0 +1,22 @@
+
+@media screen and (min-width: 640px){
+	.main {
+	width: 80%;
+	margin: 20px auto;
+    font-size:15px;
+}
+}
+@media screen and (max-device-width:640px) and (min-width: 320px) {
+  .main {
+	width: 80%;
+	margin: 0;
+    font-size:20px;
+}
+form {
+	width:75%;
+}
+
+hr{
+	width:70%;
+}
+}

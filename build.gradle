@@ -3,6 +3,7 @@
  */
 
 plugins {
+    id 'java-library'
     id 'java'
     id 'org.springframework.boot' version '3.1.2'
     id 'maven-publish'
@@ -64,6 +65,19 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.3'
     testImplementation 'junit:junit:4.12'
+
+    api 'org.mybatis:mybatis:3.5.9'
+    api 'javax.xml.bind:jaxb-api:2.3.1'
+    // https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:12.2.0.jre11'
+
+    api 'javax.servlet:jstl:1.2'
+    api 'org.apache.commons:commons-lang3:3.12.0'
+    api 'commons-io:commons-io:2.11.0'
+    api 'commons-fileupload:commons-fileupload:1.5'
+    api 'org.apache.logging.log4j:log4j-core:2.20.0'
+    testImplementation 'junit:junit:3.8.1'
+    providedCompile 'javax.servlet:javax.servlet-api:4.0.1'
 }
 
 group = 'process.citing.files'
